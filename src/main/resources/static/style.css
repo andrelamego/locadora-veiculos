@@ -1,0 +1,298 @@
+/* ===================================================
+   Locadora de Veículos — CSS Global
+   =================================================== */
+
+:root {
+    --primary: #1a3c5e;
+    --primary-hover: #142f4a;
+    --accent: #e8a020;
+    --accent-hover: #cf8e1a;
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --border: #d1d9e0;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --success: #166534;
+    --success-bg: #dcfce7;
+    --error: #991b1b;
+    --error-bg: #fee2e2;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --radius: 8px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    min-height: 100vh;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+    background: var(--primary);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    min-height: 56px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+
+.navbar .brand {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar .brand span {
+    color: var(--accent);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.navbar nav a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+}
+
+.navbar nav a:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+/* ---- Layout ---- */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+/* ---- Cards ---- */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.85rem 1.2rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-body { padding: 1.2rem; }
+
+/* ---- Alertas ---- */
+.alert {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.alert-success { background: var(--success-bg); color: var(--success); border: 1px solid #86efac; }
+.alert-error   { background: var(--error-bg);   color: var(--error);   border: 1px solid #fca5a5; }
+
+/* ---- Tabela ---- */
+.table-wrapper { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+table thead th {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+table tbody tr { border-bottom: 1px solid var(--border); }
+table tbody tr:hover { background: #f8fafc; }
+table tbody td { padding: 0.7rem 1rem; }
+
+/* ---- Badges de status ---- */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.badge-disponivel  { background: #dcfce7; color: #166534; }
+.badge-alugado     { background: #fef9c3; color: #854d0e; }
+.badge-em_reparo   { background: #fee2e2; color: #991b1b; }
+.badge-inativo     { background: #f3f4f6; color: #6b7280; }
+.badge-ativa       { background: #dbeafe; color: #1e40af; }
+.badge-finalizada  { background: #f3f4f6; color: #6b7280; }
+.badge-em_andamento { background: #fef3c7; color: #92400e; }
+.badge-finalizado  { background: #f3f4f6; color: #6b7280; }
+
+/* ---- Botões ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 1.1rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary  { background: var(--primary);  color: #fff; }
+.btn-primary:hover  { background: var(--primary-hover); }
+
+.btn-accent   { background: var(--accent);   color: #fff; }
+.btn-accent:hover   { background: var(--accent-hover); }
+
+.btn-danger   { background: var(--danger);   color: #fff; }
+.btn-danger:hover   { background: var(--danger-hover); }
+
+.btn-outline  { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline:hover  { background: var(--primary); color: #fff; }
+
+.btn-sm { padding: 0.3rem 0.75rem; font-size: 0.8rem; }
+
+.action-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+/* ---- Formulários ---- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.55rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--surface);
+    transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26,60,94,0.1);
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ---- Info box (devolução) ---- */
+.info-box {
+    background: #f0f7ff;
+    border: 1px solid #bfdbfe;
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.info-box h4 {
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-box dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2rem 1rem;
+    font-size: 0.88rem;
+}
+
+.info-box dt { font-weight: 700; color: var(--muted); }
+.info-box dd { color: var(--text); }
+
+/* ---- Valor destaque ---- */
+.valor-total {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 720px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .navbar { flex-direction: column; align-items: flex-start; padding: 0.75rem 1rem; }
+    .container { margin: 1rem auto; }
+}
