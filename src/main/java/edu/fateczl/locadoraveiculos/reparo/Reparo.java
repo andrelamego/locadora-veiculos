@@ -31,7 +31,7 @@ public class Reparo {
     @Column(name = "quantidade_dias", nullable = false)
     private Integer quantidadeDias;
 
-    @Column(name = "descricao_problema", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "descricao_problema", nullable = false, columnDefinition = "VARCHAR(MAX)")
     private String descricaoProblema;
 
     @Column(name = "valor_reparo", nullable = false, precision = 10, scale = 2)

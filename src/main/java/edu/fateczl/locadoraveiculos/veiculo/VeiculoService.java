@@ -1,6 +1,5 @@
 package edu.fateczl.locadoraveiculos.veiculo;
 
-import edu.fateczl.locadoraveiculos.enums.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,7 +35,7 @@ public class VeiculoService {
 
     // RF-03: consulta veículos disponíveis por categoria
     public List<VeiculoDTO> listarDisponiveisPorCategoria(Long categoriaId) {
-        return repository.findByCategoriaIdAndStatus(categoriaId, StatusVeiculo.DISPONIVEL)
+        return repository.listarDisponiveisPorCategoria(categoriaId)
                 .stream().map(mapper::toDTO).toList();
     }
 
