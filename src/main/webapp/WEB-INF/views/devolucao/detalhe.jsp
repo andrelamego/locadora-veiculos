@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="../fragmentos/header.jsp" %>
 
 <div class="page-title">🧾 Comprovante de Devolução #${devolucao.id}</div>
 

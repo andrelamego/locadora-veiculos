@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="../fragmentos/header.jsp" %>
 
 <div class="page-title">📄 Locações</div>
 
@@ -9,7 +9,7 @@
         Lista de Locações
         <div class="action-row">
             <a href="${pageContext.request.contextPath}/locacoes/nova" class="btn btn-accent btn-sm">+ Nova Locação</a>
-            <a href="${pageContext.request.contextPath}/relatorios/veiculos-alugados-dia" class="btn btn-primary btn-sm">📄 Alugados Hoje</a>
+            <a href="${pageContext.request.contextPath}/templates/relatorios/veiculos-alugados-dia" class="btn btn-primary btn-sm">📄 Alugados Hoje</a>
         </div>
     </div>
     <div class="card-body">

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="../fragmentos/header.jsp" %>
 
 <div class="page-title">🔧 Reparos</div>
 
@@ -10,7 +10,7 @@
         Lista de Reparos
         <div class="action-row">
             <a href="${pageContext.request.contextPath}/reparos/novo" class="btn btn-accent btn-sm">+ Novo Reparo</a>
-            <a href="${pageContext.request.contextPath}/relatorios/reparos-dia" class="btn btn-primary btn-sm">📄 Reparos Hoje</a>
+            <a href="${pageContext.request.contextPath}/templates/relatorios/reparos-dia" class="btn btn-primary btn-sm">📄 Reparos Hoje</a>
         </div>
     </div>
     <div class="card-body">

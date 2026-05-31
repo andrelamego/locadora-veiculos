@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="../fragmentos/header.jsp" %>
 
 <div class="page-title">📊 Relatórios</div>
 
@@ -13,7 +13,7 @@
             <p style="color:#6b7280;font-size:0.9rem;margin-bottom:1rem">
                 Gera PDF com dados do veículo, locatário e dias fora.
             </p>
-            <form method="get" action="${pageContext.request.contextPath}/relatorios/veiculos-alugados-dia">
+            <form method="get" action="${pageContext.request.contextPath}/templates/relatorios/veiculos-alugados-dia">
                 <div class="form-group" style="margin-bottom:1rem">
                     <label for="dataAlugados">Data</label>
                     <input type="date" id="dataAlugados" name="data" value="${hoje}" required>
@@ -30,7 +30,7 @@
             <p style="color:#6b7280;font-size:0.9rem;margin-bottom:1rem">
                 Gera PDF com dados do cliente e todas as suas locações.
             </p>
-            <form method="get" action="${pageContext.request.contextPath}/relatorios/historico-cliente-form">
+            <form method="get" action="${pageContext.request.contextPath}/templates/relatorios/historico-cliente-form">
                 <div class="form-group" style="margin-bottom:1rem">
                     <label for="cpfCliente">CPF do Cliente</label>
                     <select id="cpfCliente" name="cpf" required>
@@ -52,7 +52,7 @@
             <p style="color:#6b7280;font-size:0.9rem;margin-bottom:1rem">
                 Gera PDF com veículos em reparo na data informada.
             </p>
-            <form method="get" action="${pageContext.request.contextPath}/relatorios/reparos-dia">
+            <form method="get" action="${pageContext.request.contextPath}/templates/relatorios/reparos-dia">
                 <div class="form-group" style="margin-bottom:1rem">
                     <label for="dataReparos">Data</label>
                     <input type="date" id="dataReparos" name="data" value="${hoje}" required>
