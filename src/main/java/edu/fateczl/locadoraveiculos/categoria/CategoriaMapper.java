@@ -1,6 +1,5 @@
 package edu.fateczl.locadoraveiculos.categoria;
 
-import edu.fateczl.locadoraveiculos.categoria.*;;
 import org.mapstruct.*;
 
 // SOLID - SRP: cada mapper é responsável apenas pela conversão de uma entidade
