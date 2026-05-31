@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">${empty endereco.id ? '➕ Novo Endereço' : '✏️ Editar Endereço'}</div>
+<div class="page-title"><i class="bi ${empty endereco.id ? 'bi-plus-circle' : 'bi-pencil-square'}" aria-hidden="true"></i>${empty endereco.id ? 'Novo Endereço' : 'Editar Endereço'}</div>
 
 <div class="card">
     <div class="card-header">${empty endereco.id ? 'Cadastrar Endereço' : 'Atualizar Endereço'}</div>

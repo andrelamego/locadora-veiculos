@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">➕ Nova Locação</div>
+<div class="page-title"><i class="bi bi-plus-circle" aria-hidden="true"></i>Nova Locação</div>
 
 <div class="card">
     <div class="card-header">Registrar Locação</div>

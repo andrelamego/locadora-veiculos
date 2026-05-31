@@ -1,5 +1,5 @@
-/* ===================================================
-   Locadora de Veículos — CSS Global
+﻿/* ===================================================
+   Locadora de VeÃ­culos â€” CSS Global
    =================================================== */
 
 :root {
@@ -97,6 +97,17 @@ body {
     gap: 0.65rem;
 }
 
+.bi {
+    line-height: 1;
+    flex: 0 0 auto;
+}
+
+.shortcut-link .bi {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-top: 0.1rem;
+}
+
 /* ---- Cards ---- */
 .card {
     background: var(--surface);
@@ -115,9 +126,75 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.card-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .card-body { padding: 1.2rem; }
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-stat {
+    padding: 1rem;
+}
+
+.dashboard-stat .label {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.dashboard-stat .value {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 0.35rem;
+}
+
+.shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.shortcut-link {
+    color: var(--text);
+    text-decoration: none;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    transition: border-color 0.15s, transform 0.1s;
+}
+
+.shortcut-link:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.shortcut-link strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 0.2rem;
+}
+
+.shortcut-link span {
+    color: var(--muted);
+    font-size: 0.86rem;
+}
 
 /* ---- Alertas ---- */
 .alert {
@@ -171,7 +248,7 @@ table tbody td { padding: 0.7rem 1rem; }
 .badge-em_andamento { background: #fef3c7; color: #92400e; }
 .badge-finalizado  { background: #f3f4f6; color: #6b7280; }
 
-/* ---- Botões ---- */
+/* ---- BotÃµes ---- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -209,7 +286,7 @@ table tbody td { padding: 0.7rem 1rem; }
     align-items: center;
 }
 
-/* ---- Formulários ---- */
+/* ---- FormulÃ¡rios ---- */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -258,7 +335,7 @@ table tbody td { padding: 0.7rem 1rem; }
     border-top: 1px solid var(--border);
 }
 
-/* ---- Info box (devolução) ---- */
+/* ---- Info box (devoluÃ§Ã£o) ---- */
 .info-box {
     background: #f0f7ff;
     border: 1px solid #bfdbfe;
@@ -293,6 +370,8 @@ table tbody td { padding: 0.7rem 1rem; }
 
 @media (max-width: 720px) {
     .form-grid { grid-template-columns: 1fr; }
+    .dashboard-grid,
+    .shortcut-grid { grid-template-columns: 1fr; }
     .navbar { flex-direction: column; align-items: flex-start; padding: 0.75rem 1rem; }
     .container { margin: 1rem auto; }
 }

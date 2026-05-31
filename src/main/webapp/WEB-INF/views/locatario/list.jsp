@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">👤 Locatários</div>
+<div class="page-title"><i class="bi bi-person" aria-hidden="true"></i>Locatários</div>
 
 <div class="card">
     <div class="card-header">

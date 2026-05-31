@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de Veículos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 
 <header class="navbar">
-    <a href="${pageContext.request.contextPath}/" class="brand">🚗 Locadora <span>Aeroporto</span></a>
+    <a href="${pageContext.request.contextPath}/" class="brand"><i class="bi bi-car-front" aria-hidden="true"></i> Locadora <span>Aeroporto</span></a>
     <nav>
         <a href="${pageContext.request.contextPath}/categorias">Categorias</a>
         <a href="${pageContext.request.contextPath}/veiculos">Veículos</a>

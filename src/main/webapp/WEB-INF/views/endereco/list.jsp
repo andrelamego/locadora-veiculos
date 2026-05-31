@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">📍 Endereços</div>
+<div class="page-title"><i class="bi bi-geo-alt" aria-hidden="true"></i>Endereços</div>
 
 <div class="card">
     <div class="card-header">

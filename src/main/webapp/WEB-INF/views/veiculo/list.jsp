@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">🚗 Veículos</div>
+<div class="page-title"><i class="bi bi-car-front" aria-hidden="true"></i>Veículos</div>
 
 <div class="card">
     <div class="card-header">

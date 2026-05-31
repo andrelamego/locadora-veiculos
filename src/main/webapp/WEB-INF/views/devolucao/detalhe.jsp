@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">🧾 Comprovante de Devolução #${devolucao.id}</div>
+<div class="page-title"><i class="bi bi-receipt" aria-hidden="true"></i>Comprovante de Devolução #${devolucao.id}</div>
 
 <div class="card">
     <div class="card-header">Detalhes da Devolução</div>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">${empty veiculo.placa ? '➕ Novo Veículo' : '✏️ Editar Veículo'}</div>
+<div class="page-title"><i class="bi ${empty veiculo.placa ? 'bi-plus-circle' : 'bi-pencil-square'}" aria-hidden="true"></i>${empty veiculo.placa ? 'Novo Veículo' : 'Editar Veículo'}</div>
 
 <div class="card">
     <div class="card-header">${empty veiculo.placa ? 'Cadastrar Veículo' : 'Atualizar Veículo'}</div>
