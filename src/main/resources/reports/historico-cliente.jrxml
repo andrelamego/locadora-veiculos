@@ -1,0 +1,127 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6 -->
+<jasperReport name="historico-cliente" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc9bd414-95ef-422d-a13c-fc88784b01eb">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <style name="Title" fontName="Arial" fontSize="26.0" bold="true"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="14.0"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="8.0" bold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="8.0"/>
+
+    <parameter name="CPF_CLIENTE" class="java.lang.String"/>
+
+    <query language="sql"><![CDATA[
+SELECT
+    cpf,
+    nome,
+    numero_habilitacao,
+    data_nascimento,
+    logradouro,
+    numero,
+    cep,
+    cidade,
+    placa,
+    marca,
+    modelo,
+    cor,
+    ano,
+    locacao_id,
+    data_retirada,
+    quantidade_dias,
+    data_prevista_devolucao,
+    status_locacao,
+    data_devolucao,
+    valor_locacao,
+    valor_combustivel,
+    valor_total
+FROM dbo.fn_historico_cliente($P{CPF_CLIENTE})
+ORDER BY data_retirada DESC, locacao_id DESC
+    ]]></query>
+
+    <field name="cpf" class="java.lang.String"/>
+    <field name="nome" class="java.lang.String"/>
+    <field name="numero_habilitacao" class="java.lang.String"/>
+    <field name="data_nascimento" class="java.sql.Date"/>
+    <field name="logradouro" class="java.lang.String"/>
+    <field name="numero" class="java.lang.String"/>
+    <field name="cep" class="java.lang.String"/>
+    <field name="cidade" class="java.lang.String"/>
+    <field name="placa" class="java.lang.String"/>
+    <field name="marca" class="java.lang.String"/>
+    <field name="modelo" class="java.lang.String"/>
+    <field name="cor" class="java.lang.String"/>
+    <field name="ano" class="java.lang.Integer"/>
+    <field name="locacao_id" class="java.lang.Long"/>
+    <field name="data_retirada" class="java.sql.Date"/>
+    <field name="quantidade_dias" class="java.lang.Integer"/>
+    <field name="data_prevista_devolucao" class="java.sql.Date"/>
+    <field name="status_locacao" class="java.lang.String"/>
+    <field name="data_devolucao" class="java.sql.Date"/>
+    <field name="valor_locacao" class="java.math.BigDecimal"/>
+    <field name="valor_combustivel" class="java.math.BigDecimal"/>
+    <field name="valor_total" class="java.math.BigDecimal"/>
+
+    <background splitType="Stretch"/>
+    <title height="102" splitType="Stretch">
+        <element kind="staticText" uuid="b9177aba-4465-4701-9026-03a49ea59e26" x="0" y="10" width="555" height="33" vTextAlign="Middle" style="Title">
+            <text><![CDATA[Historico]]></text>
+        </element>
+        <element kind="textField" uuid="9135e5e7-a250-4bb8-ad41-b8044264d6db" x="0" y="46" width="555" height="20" style="SubTitle">
+            <expression><![CDATA["Cliente: " + ($F{nome} == null ? $P{CPF_CLIENTE} : $F{nome})]]></expression>
+        </element>
+        <element kind="textField" uuid="5cf3812c-d63e-4a61-ac32-36c025e348df" x="0" y="70" width="555" height="18" style="Detail">
+            <expression><![CDATA["CPF: " + $P{CPF_CLIENTE} + " | CNH: " + ($F{numero_habilitacao} == null ? "" : $F{numero_habilitacao}) + " | Endereco: " + ($F{logradouro} == null ? "" : $F{logradouro} + ", " + $F{numero} + " - " + $F{cidade} + " - CEP " + $F{cep})]]></expression>
+        </element>
+    </title>
+    <pageHeader splitType="Stretch"/>
+    <columnHeader height="40" splitType="Stretch">
+        <element kind="staticText" uuid="f76fb4d6-0702-48ce-8752-cc2a9c9f4792" x="0" y="12" width="48" height="18" style="Column header"><text><![CDATA[Placa]]></text></element>
+        <element kind="staticText" uuid="229e2a28-b4b5-4f7a-a4c0-46d29e151fbb" x="48" y="12" width="62" height="18" style="Column header"><text><![CDATA[Marca]]></text></element>
+        <element kind="staticText" uuid="51c81208-674e-4c0c-9fe4-dca3b94399d0" x="110" y="12" width="72" height="18" style="Column header"><text><![CDATA[Modelo]]></text></element>
+        <element kind="staticText" uuid="8b906c23-8646-466c-b0ab-c4864a4d0130" x="182" y="12" width="33" height="18" style="Column header"><text><![CDATA[Ano]]></text></element>
+        <element kind="staticText" uuid="9970cd1d-2e6d-448b-9773-f85221db037f" x="215" y="12" width="64" height="18" style="Column header"><text><![CDATA[Retirada]]></text></element>
+        <element kind="staticText" uuid="cb8f078d-f44c-4751-bf2f-24de2fa910ce" x="279" y="12" width="32" height="18" hTextAlign="Center" style="Column header"><text><![CDATA[Dias]]></text></element>
+        <element kind="staticText" uuid="de5d5e12-b1cf-45c5-b1cc-1e99bafad49d" x="311" y="12" width="64" height="18" style="Column header"><text><![CDATA[Prevista]]></text></element>
+        <element kind="staticText" uuid="38fe6c43-8806-4270-a729-f80ade54f691" x="375" y="12" width="62" height="18" style="Column header"><text><![CDATA[Status]]></text></element>
+        <element kind="staticText" uuid="ad87f9cf-cd5f-4cf3-83c8-fe3c1efc5caf" x="437" y="12" width="64" height="18" style="Column header"><text><![CDATA[Devol.]]></text></element>
+        <element kind="staticText" uuid="7288f927-2b7c-4a3e-a5fd-55e9c0973fa9" x="501" y="12" width="54" height="18" hTextAlign="Right" style="Column header"><text><![CDATA[Total]]></text></element>
+        <element kind="line" uuid="bf67b57c-3f47-4f08-bd51-f7da566a238e" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <element kind="textField" uuid="5d359469-7b35-4b16-a865-e1638a2eb554" x="0" y="0" width="48" height="16" style="Detail"><expression><![CDATA[$F{placa}]]></expression></element>
+            <element kind="textField" uuid="713eb2c6-b59f-4281-bb97-b71288b0f16f" x="48" y="0" width="62" height="16" style="Detail"><expression><![CDATA[$F{marca}]]></expression></element>
+            <element kind="textField" uuid="a69b784f-57d1-4429-bd7d-32efc88bb496" x="110" y="0" width="72" height="16" style="Detail"><expression><![CDATA[$F{modelo}]]></expression></element>
+            <element kind="textField" uuid="14cd9fbc-44a0-49c4-a094-81c2daf5675c" x="182" y="0" width="33" height="16" style="Detail"><expression><![CDATA[$F{ano}]]></expression></element>
+            <element kind="textField" uuid="48cf353d-f59c-489f-98e5-ef2eaf13e05b" x="215" y="0" width="64" height="16" pattern="dd/MM/yyyy" style="Detail"><expression><![CDATA[$F{data_retirada}]]></expression></element>
+            <element kind="textField" uuid="138cfa91-e2ee-459f-84de-30b4381c9c36" x="279" y="0" width="32" height="16" hTextAlign="Center" style="Detail"><expression><![CDATA[$F{quantidade_dias}]]></expression></element>
+            <element kind="textField" uuid="b870d44c-d1e5-4230-a098-e9ab06d41f93" x="311" y="0" width="64" height="16" pattern="dd/MM/yyyy" style="Detail"><expression><![CDATA[$F{data_prevista_devolucao}]]></expression></element>
+            <element kind="textField" uuid="259b58cc-0b60-45d6-93f4-8f917fa293a4" x="375" y="0" width="62" height="16" style="Detail"><expression><![CDATA[$F{status_locacao}]]></expression></element>
+            <element kind="textField" uuid="f172af2d-ae40-4391-8bdf-a2fec0d5a0f8" x="437" y="0" width="64" height="16" pattern="dd/MM/yyyy" blankWhenNull="true" style="Detail"><expression><![CDATA[$F{data_devolucao}]]></expression></element>
+            <element kind="textField" uuid="c3ed9d11-793f-4920-99d7-38a54075d24c" x="501" y="0" width="54" height="16" pattern="R$ #,##0.00" blankWhenNull="true" hTextAlign="Right" style="Detail"><expression><![CDATA[$F{valor_total}]]></expression></element>
+            <element kind="line" uuid="e9c73b90-668c-4039-90fb-c045398d4833" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1">
+                <pen lineWidth="0.5" lineColor="#999999"/>
+            </element>
+        </band>
+    </detail>
+    <columnFooter height="45" splitType="Stretch">
+        <element kind="line" uuid="f11982b0-e186-4cda-b0c6-55a3f6223ff9" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnFooter>
+    <pageFooter height="20" splitType="Stretch">
+        <element kind="textField" uuid="09f1f573-370e-4786-9320-fc06a3a5c536" x="433" y="0" width="80" height="20" fontSize="10.0" hTextAlign="Right" style="Column header">
+            <expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+        </element>
+        <element kind="textField" uuid="96b109f3-73bf-432f-b82d-89633a25a923" x="513" y="0" width="40" height="20" fontSize="10.0" evaluationTime="Report" style="Column header">
+            <expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+        </element>
+        <element kind="textField" uuid="c19f519e-8187-4a2e-bdbd-ab2077673490" x="0" y="0" width="197" height="20" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" style="Column header">
+            <expression><![CDATA[new java.util.Date()]]></expression>
+        </element>
+    </pageFooter>
+    <summary splitType="Stretch"/>
+</jasperReport>

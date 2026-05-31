@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">📋 Histórico de Locações — ${locatario.nome}</div>
+<div class="page-title"><i class="bi bi-clock-history" aria-hidden="true"></i>Histórico de Locações — ${locatario.nome}</div>
 
 <div class="info-box" style="margin-bottom:1.5rem">
     <h4>Dados do Cliente</h4>
@@ -19,7 +19,7 @@
     <div class="card-header">
         Locações Realizadas
         <a href="${pageContext.request.contextPath}/relatorios/historico-cliente/${locatario.cpf}"
-           class="btn btn-accent btn-sm">📄 Gerar PDF</a>
+           class="btn btn-accent btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Gerar PDF</a>
     </div>
     <div class="card-body">
         <div class="table-wrapper">

@@ -1,0 +1,102 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6 -->
+<jasperReport name="reparos-dia" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06369b28-c64f-4446-a63d-f3325fba3754">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <style name="Title" fontName="Arial" fontSize="26.0" bold="true"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="14.0"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="8.0" bold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="8.0"/>
+
+    <parameter name="DATA_CONSULTA" class="java.sql.Date"/>
+
+    <query language="sql"><![CDATA[
+SELECT
+    reparo_id,
+    placa,
+    marca,
+    modelo,
+    cor,
+    ano,
+    data_entrada,
+    quantidade_dias,
+    data_prevista_saida,
+    descricao_problema,
+    valor_reparo,
+    status
+FROM dbo.fn_reparos_no_dia($P{DATA_CONSULTA})
+ORDER BY data_entrada, marca, modelo
+    ]]></query>
+
+    <field name="reparo_id" class="java.lang.Long"/>
+    <field name="placa" class="java.lang.String"/>
+    <field name="marca" class="java.lang.String"/>
+    <field name="modelo" class="java.lang.String"/>
+    <field name="cor" class="java.lang.String"/>
+    <field name="ano" class="java.lang.Integer"/>
+    <field name="data_entrada" class="java.sql.Date"/>
+    <field name="quantidade_dias" class="java.lang.Integer"/>
+    <field name="data_prevista_saida" class="java.sql.Date"/>
+    <field name="descricao_problema" class="java.lang.String"/>
+    <field name="valor_reparo" class="java.math.BigDecimal"/>
+    <field name="status" class="java.lang.String"/>
+
+    <background splitType="Stretch"/>
+    <title height="76" splitType="Stretch">
+        <element kind="staticText" uuid="a14793ef-b282-45a8-8533-7ccf5de8b864" x="0" y="10" width="555" height="33" vTextAlign="Middle" style="Title">
+            <text><![CDATA[Reparos do Dia]]></text>
+        </element>
+        <element kind="textField" uuid="e826ec94-f56f-48a2-85f2-4d229a51053b" x="0" y="46" width="555" height="22" pattern="dd/MM/yyyy" style="SubTitle">
+            <expression><![CDATA["Veiculos em reparo em " + new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{DATA_CONSULTA})]]></expression>
+        </element>
+    </title>
+    <pageHeader splitType="Stretch"/>
+    <columnHeader height="40" splitType="Stretch">
+        <element kind="staticText" uuid="fe5e90d8-2e61-44c3-8b55-df42b2c8ce14" x="0" y="12" width="48" height="18" style="Column header"><text><![CDATA[Placa]]></text></element>
+        <element kind="staticText" uuid="e10af9c6-7e6e-49c5-9c27-306f60f4ce49" x="48" y="12" width="62" height="18" style="Column header"><text><![CDATA[Marca]]></text></element>
+        <element kind="staticText" uuid="963a1db7-7090-4f49-b296-f5e015b6fedc" x="110" y="12" width="70" height="18" style="Column header"><text><![CDATA[Modelo]]></text></element>
+        <element kind="staticText" uuid="b6483974-6bb7-4ae1-9657-ff17c4c393f4" x="180" y="12" width="34" height="18" style="Column header"><text><![CDATA[Ano]]></text></element>
+        <element kind="staticText" uuid="616653f4-ff8b-40b4-bbca-851672f10484" x="214" y="12" width="66" height="18" style="Column header"><text><![CDATA[Entrada]]></text></element>
+        <element kind="staticText" uuid="3717676f-4059-44fb-8c62-f2978d0bc095" x="280" y="12" width="34" height="18" hTextAlign="Center" style="Column header"><text><![CDATA[Dias]]></text></element>
+        <element kind="staticText" uuid="e6f243f6-078c-4937-8792-efdcfd9661dc" x="314" y="12" width="66" height="18" style="Column header"><text><![CDATA[Saida]]></text></element>
+        <element kind="staticText" uuid="7e5b101c-7a81-4b54-a830-a531e428300a" x="380" y="12" width="120" height="18" style="Column header"><text><![CDATA[Problema]]></text></element>
+        <element kind="staticText" uuid="fe11d81b-ea68-4e21-bdd6-8f4be8ab0a6c" x="500" y="12" width="55" height="18" hTextAlign="Right" style="Column header"><text><![CDATA[Valor]]></text></element>
+        <element kind="line" uuid="0a6cae26-f61c-4067-a48a-a677c06df155" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnHeader>
+    <detail>
+        <band height="28" splitType="Stretch">
+            <element kind="textField" uuid="e0525933-16fc-4e93-86d2-620b18dad030" x="0" y="0" width="48" height="24" style="Detail"><expression><![CDATA[$F{placa}]]></expression></element>
+            <element kind="textField" uuid="68a80188-554e-41e6-a111-86ca38f79e89" x="48" y="0" width="62" height="24" style="Detail"><expression><![CDATA[$F{marca}]]></expression></element>
+            <element kind="textField" uuid="8303c87a-2a0e-46c2-a4f5-a55c563e7a19" x="110" y="0" width="70" height="24" style="Detail"><expression><![CDATA[$F{modelo}]]></expression></element>
+            <element kind="textField" uuid="9314aab6-a336-4863-b78f-88a3735c145a" x="180" y="0" width="34" height="24" style="Detail"><expression><![CDATA[$F{ano}]]></expression></element>
+            <element kind="textField" uuid="3487b6b6-63d1-4bc6-bbbc-3d26cbe0c2a6" x="214" y="0" width="66" height="24" pattern="dd/MM/yyyy" style="Detail"><expression><![CDATA[$F{data_entrada}]]></expression></element>
+            <element kind="textField" uuid="d17ed9e1-62ff-4556-aab7-17d73e32643c" x="280" y="0" width="34" height="24" hTextAlign="Center" style="Detail"><expression><![CDATA[$F{quantidade_dias}]]></expression></element>
+            <element kind="textField" uuid="1a2f5a1f-c247-4791-99e2-a5e788f57708" x="314" y="0" width="66" height="24" pattern="dd/MM/yyyy" style="Detail"><expression><![CDATA[$F{data_prevista_saida}]]></expression></element>
+            <element kind="textField" uuid="20a53f49-eb24-4063-afb5-f4eeed0bf62b" x="380" y="0" width="120" height="24" textAdjust="StretchHeight" style="Detail"><expression><![CDATA[$F{descricao_problema}]]></expression></element>
+            <element kind="textField" uuid="94b07816-4ee4-4664-89ca-d4c82627fe5a" x="500" y="0" width="55" height="24" pattern="R$ #,##0.00" hTextAlign="Right" style="Detail"><expression><![CDATA[$F{valor_reparo}]]></expression></element>
+            <element kind="line" uuid="79d4f6a7-6e02-49c2-af16-ee6dd2928827" positionType="FixRelativeToBottom" x="0" y="27" width="555" height="1">
+                <pen lineWidth="0.5" lineColor="#999999"/>
+            </element>
+        </band>
+    </detail>
+    <columnFooter height="45" splitType="Stretch">
+        <element kind="line" uuid="d74abb1c-9e3f-4de1-af27-e2bdf2dc4a77" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+            <pen lineWidth="0.5" lineColor="#999999"/>
+        </element>
+    </columnFooter>
+    <pageFooter height="20" splitType="Stretch">
+        <element kind="textField" uuid="d93e1ec5-fde2-48f7-9d69-6e228ea68f28" x="433" y="0" width="80" height="20" fontSize="10.0" hTextAlign="Right" style="Column header">
+            <expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+        </element>
+        <element kind="textField" uuid="c3ffca0e-8265-4d8b-bbfb-d181307d09a7" x="513" y="0" width="40" height="20" fontSize="10.0" evaluationTime="Report" style="Column header">
+            <expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+        </element>
+        <element kind="textField" uuid="ee4568e5-7ba5-4bc6-bb23-203bfa2c70d6" x="0" y="0" width="197" height="20" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" style="Column header">
+            <expression><![CDATA[new java.util.Date()]]></expression>
+        </element>
+    </pageFooter>
+    <summary splitType="Stretch"/>
+</jasperReport>

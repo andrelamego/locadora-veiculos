@@ -1,9 +1,6 @@
 package edu.fateczl.locadoraveiculos.relatorio;
 
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
-import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;

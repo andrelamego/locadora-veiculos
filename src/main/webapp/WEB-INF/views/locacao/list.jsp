@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">📄 Locações</div>
+<div class="page-title"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Locações</div>
 
 <div class="card">
     <div class="card-header">
         Lista de Locações
         <div class="action-row">
             <a href="${pageContext.request.contextPath}/locacoes/nova" class="btn btn-accent btn-sm">+ Nova Locação</a>
-            <a href="${pageContext.request.contextPath}/templates/relatorios/veiculos-alugados-dia" class="btn btn-primary btn-sm">📄 Alugados Hoje</a>
+            <a href="${pageContext.request.contextPath}/relatorios/veiculos-alugados-dia" class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Alugados Hoje</a>
         </div>
     </div>
     <div class="card-body">

@@ -3,14 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title">🔧 Reparos</div>
+<div class="page-title"><i class="bi bi-tools" aria-hidden="true"></i>Reparos</div>
 
 <div class="card">
     <div class="card-header">
         Lista de Reparos
         <div class="action-row">
             <a href="${pageContext.request.contextPath}/reparos/novo" class="btn btn-accent btn-sm">+ Novo Reparo</a>
-            <a href="${pageContext.request.contextPath}/templates/relatorios/reparos-dia" class="btn btn-primary btn-sm">📄 Reparos Hoje</a>
+            <a href="${pageContext.request.contextPath}/relatorios/reparos-dia" class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Reparos Hoje</a>
         </div>
     </div>
     <div class="card-body">
