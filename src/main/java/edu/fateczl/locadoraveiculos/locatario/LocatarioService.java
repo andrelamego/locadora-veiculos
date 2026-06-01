@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 // ============================================================
 // SOLID - SRP: cada Service concentra apenas regras de negócio
@@ -35,6 +36,10 @@ public class LocatarioService {
         return repository.findById(cpf)
                 .map(mapper::toDTO)
                 .orElseThrow(() -> new EntityNotFoundException("Locatário não encontrado."));
+    }
+
+    public Optional<LocatarioDTO> buscarOpcionalPorCpf(String cpf) {
+        return repository.findById(cpf).map(mapper::toDTO);
     }
 
     @Transactional

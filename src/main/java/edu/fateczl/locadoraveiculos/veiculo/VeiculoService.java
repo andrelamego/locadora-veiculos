@@ -4,6 +4,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.fateczl.locadoraveiculos.enums.StatusVeiculo;
+
 import java.util.List;
 
 // ============================================================
@@ -25,6 +27,11 @@ public class VeiculoService {
 
     public List<VeiculoDTO> listarTodos() {
         return repository.findAll().stream().map(mapper::toDTO).toList();
+    }
+
+    public List<VeiculoDTO> listarDisponiveis() {
+        return repository.listarPorStatus(StatusVeiculo.DISPONIVEL)
+                .stream().map(mapper::toDTO).toList();
     }
 
     public VeiculoDTO buscarPorPlaca(String placa) {

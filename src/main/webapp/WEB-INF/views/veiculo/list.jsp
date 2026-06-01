@@ -11,8 +11,8 @@
         <a href="${pageContext.request.contextPath}/veiculos/novo" class="btn btn-accent btn-sm">+ Novo Veículo</a>
     </div>
     <div class="card-body">
-        <div class="table-wrapper">
-            <table>
+        <div class="table-wrapper sticky-actions-wrapper">
+            <table class="sticky-actions-table">
                 <thead>
                     <tr>
                         <th>Placa</th>
@@ -25,7 +25,7 @@
                         <th>Categoria</th>
                         <th>Diária</th>
                         <th>Status</th>
-                        <th>Ações</th>
+                        <th class="actions-col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +41,7 @@
                             <td>${v.categoriaNome}</td>
                             <td><fmt:formatNumber value="${v.valorDiaria}" type="currency" currencySymbol="R$"/></td>
                             <td><span class="badge badge-${v.status.toString().toLowerCase()}">${v.status}</span></td>
-                            <td>
+                            <td class="actions-col">
                                 <div class="action-row">
                                     <a href="${pageContext.request.contextPath}/veiculos/editar/${v.placa}" class="btn btn-outline btn-sm">Editar</a>
                                     <a href="${pageContext.request.contextPath}/veiculos/excluir/${v.placa}"

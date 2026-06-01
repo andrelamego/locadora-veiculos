@@ -65,7 +65,7 @@
                                 <td>${v.quilometragem}</td>
                                 <td><fmt:formatNumber value="${v.valorDiaria}" type="currency" currencySymbol="R$"/></td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath}/locacoes/nova?placa=${v.placa}" class="btn btn-accent btn-sm">Alugar</a>
+                                    <a href="${pageContext.request.contextPath}/locacoes/nova/${v.placa}" class="btn btn-accent btn-sm">Nova Locacao</a>
                                 </td>
                             </tr>
                         </c:forEach>
