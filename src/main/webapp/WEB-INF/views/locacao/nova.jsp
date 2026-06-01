@@ -3,15 +3,32 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../fragmentos/header.jsp" %>
 
-<div class="page-title"><i class="bi bi-key" aria-hidden="true"></i>Nova locacao</div>
+<div class="page-title"><i class="bi bi-key" aria-hidden="true"></i>Nova locação</div>
 
 <div class="rental-layout">
     <section class="card">
-        <div class="card-header">Carros disponiveis</div>
+        <div class="card-header">Carros disponíveis</div>
         <div class="card-body">
+            <form class="form-grid single-line-form" method="get" action="${pageContext.request.contextPath}/locacoes/nova">
+                <label>
+                    Categoria
+                    <select name="categoriaId">
+                        <option value="">Todas as categorias</option>
+                        <c:forEach var="categoria" items="${categorias}">
+                            <option value="${categoria.id}" ${categoriaSelecionadaId == categoria.id ? 'selected' : ''}>
+                                ${categoria.nome}
+                            </option>
+                        </c:forEach>
+                    </select>
+                </label>
+                <button class="btn btn-secondary" type="submit">
+                    <i class="bi bi-funnel" aria-hidden="true"></i> Filtrar
+                </button>
+            </form>
+
             <c:choose>
                 <c:when test="${empty veiculos}">
-                    <div class="empty-state">Nenhum veiculo disponivel no momento.</div>
+                    <div class="empty-state">Nenhum veículo disponível no momento.</div>
                 </c:when>
                 <c:otherwise>
                     <div class="vehicle-grid">
@@ -34,10 +51,15 @@
 
                                 <div class="vehicle-card-footer">
                                     <div class="vehicle-price">
-                                        <span>Diaria</span>
+                                        <span>Diária</span>
                                         <strong>R$ <fmt:formatNumber value="${veiculo.valorDiaria}" minFractionDigits="2"/></strong>
                                     </div>
-                                    <a class="btn btn-primary btn-sm" href="${pageContext.request.contextPath}/locacoes/nova/${veiculo.placa}">
+                                    <c:url var="urlEscolherVeiculo" value="/locacoes/nova/${veiculo.placa}">
+                                        <c:if test="${not empty categoriaSelecionadaId}">
+                                            <c:param name="categoriaId" value="${categoriaSelecionadaId}"/>
+                                        </c:if>
+                                    </c:url>
+                                    <a class="btn btn-primary btn-sm" href="${urlEscolherVeiculo}">
                                         <i class="bi bi-check2-circle" aria-hidden="true"></i> Escolher
                                     </a>
                                 </div>
@@ -50,11 +72,11 @@
     </section>
 
     <section class="card">
-        <div class="card-header">Dados da locacao</div>
+        <div class="card-header">Dados da locação</div>
         <div class="card-body">
             <c:choose>
                 <c:when test="${empty veiculoSelecionado}">
-                    <div class="empty-state">Escolha um carro disponivel para iniciar a locacao.</div>
+                    <div class="empty-state">Escolha um carro disponível para iniciar a locação.</div>
                 </c:when>
                 <c:otherwise>
                     <div class="selected-vehicle">
@@ -69,6 +91,9 @@
                     </div>
 
                     <form class="form-grid single-line-form" method="get" action="${pageContext.request.contextPath}/locacoes/nova/${veiculoSelecionado.placa}/cpf">
+                        <c:if test="${not empty categoriaSelecionadaId}">
+                            <input type="hidden" name="categoriaId" value="${categoriaSelecionadaId}">
+                        </c:if>
                         <label>
                             CPF
                             <input type="text" name="cpf" value="${cpf}" maxlength="14" placeholder="000.000.000-00" required>
@@ -80,7 +105,7 @@
 
                     <c:if test="${cpfConsultado && not empty locatarioEncontrado}">
                         <div class="info-panel">
-                            <div class="section-title">Locatario encontrado</div>
+                            <div class="section-title">Locatário encontrado</div>
                             <p><strong>${locatarioEncontrado.nome}</strong></p>
                             <p>CPF: ${locatarioEncontrado.cpf}</p>
                             <p>CNH: ${locatarioEncontrado.numeroHabilitacao}</p>
@@ -95,12 +120,12 @@
                                 <input type="date" name="dataRetirada" value="${dataRetirada}" required>
                             </label>
                             <label>
-                                Dias de locacao
+                                Dias de locação
                                 <input type="number" name="quantidadeDias" value="${quantidadeDias}" min="1" required>
                             </label>
                             <div class="form-actions">
                                 <button class="btn btn-primary" type="submit">
-                                    <i class="bi bi-check-lg" aria-hidden="true"></i> Confirmar locacao
+                                    <i class="bi bi-check-lg" aria-hidden="true"></i> Confirmar locação
                                 </button>
                             </div>
                         </form>
@@ -108,8 +133,8 @@
 
                     <c:if test="${cpfConsultado && empty locatarioEncontrado}">
                         <div class="info-panel">
-                            <div class="section-title">Novo locatario</div>
-                            <p>CPF nao encontrado. Preencha o cadastro para concluir a locacao.</p>
+                            <div class="section-title">Novo locatário</div>
+                            <p>CPF não encontrado. Preencha o cadastro para concluir a locação.</p>
                         </div>
 
                         <form class="form-grid" method="post" action="${pageContext.request.contextPath}/locacoes/nova/cadastrar-confirmar">
@@ -121,7 +146,7 @@
                                 <input type="text" name="nome" required>
                             </label>
                             <label>
-                                Numero da habilitacao
+                                Número da habilitação
                                 <input type="text" name="numeroHabilitacao" required>
                             </label>
                             <label>
@@ -133,7 +158,7 @@
                                 <input type="date" name="dataRetirada" value="${dataRetirada}" required>
                             </label>
                             <label>
-                                Dias de locacao
+                                Dias de locação
                                 <input type="number" name="quantidadeDias" value="${quantidadeDias}" min="1" required>
                             </label>
                             <label>
@@ -141,7 +166,7 @@
                                 <input type="text" name="logradouro" required>
                             </label>
                             <label>
-                                Numero
+                                Número
                                 <input type="text" name="numero" required>
                             </label>
                             <label>
