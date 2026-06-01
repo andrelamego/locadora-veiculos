@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="card-header">
-        Consulta por Categoria
+        Consulta por categoria
     </div>
     <div class="card-body">
         <form method="get" action="${pageContext.request.contextPath}/veiculos/disponiveis">
@@ -65,7 +65,7 @@
                                 <td>${v.quilometragem}</td>
                                 <td><fmt:formatNumber value="${v.valorDiaria}" type="currency" currencySymbol="R$"/></td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath}/locacoes/nova/${v.placa}" class="btn btn-accent btn-sm">Nova Locacao</a>
+                                    <a href="${pageContext.request.contextPath}/locacoes/nova/${v.placa}" class="btn btn-accent btn-sm">Nova locação</a>
                                 </td>
                             </tr>
                         </c:forEach>

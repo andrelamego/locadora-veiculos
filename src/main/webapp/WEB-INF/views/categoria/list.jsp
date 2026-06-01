@@ -7,8 +7,8 @@
 
 <div class="card">
     <div class="card-header">
-        Lista de Categorias
-        <a href="${pageContext.request.contextPath}/categorias/nova" class="btn btn-accent btn-sm">+ Nova Categoria</a>
+        Lista de categorias
+        <a href="${pageContext.request.contextPath}/categorias/nova" class="btn btn-accent btn-sm">+ Nova categoria</a>
     </div>
     <div class="card-body">
         <div class="table-wrapper">

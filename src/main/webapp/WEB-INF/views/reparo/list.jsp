@@ -7,10 +7,10 @@
 
 <div class="card">
     <div class="card-header">
-        Lista de Reparos
+        Lista de reparos
         <div class="action-row">
-            <a href="${pageContext.request.contextPath}/reparos/novo" class="btn btn-accent btn-sm">+ Novo Reparo</a>
-            <a href="${pageContext.request.contextPath}/relatorios/reparos-dia" class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Reparos Hoje</a>
+            <a href="${pageContext.request.contextPath}/reparos/novo" class="btn btn-accent btn-sm">+ Novo reparo</a>
+            <a href="${pageContext.request.contextPath}/relatorios/reparos-dia" class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Reparos hoje</a>
         </div>
     </div>
     <div class="card-body">

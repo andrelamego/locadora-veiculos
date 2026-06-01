@@ -32,11 +32,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="dataRetirada">Data de Retirada *</label>
+                    <label for="dataRetirada">Data de retirada *</label>
                     <input type="date" id="dataRetirada" name="dataRetirada" value="${locacao.dataRetirada}" required>
                 </div>
                 <div class="form-group">
-                    <label for="quantidadeDias">Quantidade de Dias *</label>
+                    <label for="quantidadeDias">Quantidade de dias *</label>
                     <input type="number" id="quantidadeDias" name="quantidadeDias" value="${locacao.quantidadeDias}" required min="1">
                 </div>
             </div>

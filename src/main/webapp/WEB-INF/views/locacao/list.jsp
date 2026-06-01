@@ -8,8 +8,8 @@
     <div class="card-header">
         Lista de Locações
         <div class="action-row">
-            <a href="${pageContext.request.contextPath}/locacoes/nova" class="btn btn-accent btn-sm"><i class="bi bi-key" aria-hidden="true"></i>Nova Locacao</a>
-            <a href="${pageContext.request.contextPath}/relatorios/veiculos-alugados-dia" class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Alugados Hoje</a>
+            <a href="${pageContext.request.contextPath}/locacoes/nova" class="btn btn-accent btn-sm"><i class="bi bi-key" aria-hidden="true"></i>Nova locação</a>
+            <a href="${pageContext.request.contextPath}/relatorios/veiculos-alugados-dia" class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Alugados hoje</a>
         </div>
     </div>
     <div class="card-body">

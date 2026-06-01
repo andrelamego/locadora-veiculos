@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locadora de Veiculos</title>
+    <title>Locadora de Veículos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -17,7 +17,7 @@
     </a>
     <nav>
         <a class="nav-primary" href="${pageContext.request.contextPath}/locacoes/nova">
-            <i class="bi bi-key" aria-hidden="true"></i> Nova locacao
+            <i class="bi bi-key" aria-hidden="true"></i> Nova locação
         </a>
 
         <div class="nav-dropdown">
@@ -25,8 +25,8 @@
                 <i class="bi bi-car-front" aria-hidden="true"></i> Frota <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="nav-dropdown-menu">
-                <a href="${pageContext.request.contextPath}/veiculos">Veiculos</a>
-                <a href="${pageContext.request.contextPath}/veiculos/disponiveis">Disponiveis por categoria</a>
+                <a href="${pageContext.request.contextPath}/veiculos">Veículos</a>
+                <a href="${pageContext.request.contextPath}/veiculos/disponiveis">Disponíveis por categoria</a>
                 <a href="${pageContext.request.contextPath}/categorias">Categorias</a>
                 <a href="${pageContext.request.contextPath}/reparos">Reparos</a>
             </div>
@@ -34,17 +34,17 @@
 
         <div class="nav-dropdown">
             <button type="button" class="nav-dropdown-toggle">
-                <i class="bi bi-clipboard-check" aria-hidden="true"></i> Operacao <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                <i class="bi bi-clipboard-check" aria-hidden="true"></i> Operação <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="nav-dropdown-menu">
-                <a href="${pageContext.request.contextPath}/locacoes">Locacoes</a>
-                <a href="${pageContext.request.contextPath}/devolucoes">Devolucoes</a>
-                <a href="${pageContext.request.contextPath}/locatarios">Locatarios</a>
+                <a href="${pageContext.request.contextPath}/locacoes">Locações</a>
+                <a href="${pageContext.request.contextPath}/devolucoes">Devoluções</a>
+                <a href="${pageContext.request.contextPath}/locatarios">Locatários</a>
             </div>
         </div>
 
         <a href="${pageContext.request.contextPath}/relatorios">
-            <i class="bi bi-bar-chart" aria-hidden="true"></i> Relatorios
+            <i class="bi bi-bar-chart" aria-hidden="true"></i> Relatórios
         </a>
     </nav>
 </header>

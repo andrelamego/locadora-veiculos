@@ -4,24 +4,24 @@
 <section class="home-hero">
     <div class="home-hero-content">
         <div class="hero-kicker">Atendimento principal</div>
-        <h1>Nova locacao de veiculo</h1>
-        <p>Escolha um carro disponivel, consulte o CPF do cliente e confirme a locacao em um fluxo unico.</p>
+        <h1>Nova locação de veículo</h1>
+        <p>Escolha um carro disponível, consulte o CPF do cliente e confirme a locação em um fluxo único.</p>
         <div class="hero-actions">
             <a class="btn btn-accent btn-lg" href="${pageContext.request.contextPath}/locacoes/nova">
-                <i class="bi bi-key" aria-hidden="true"></i> Iniciar locacao
+                <i class="bi bi-key" aria-hidden="true"></i> Iniciar locação
             </a>
             <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/veiculos/disponiveis">
-                <i class="bi bi-check-circle" aria-hidden="true"></i> Ver disponiveis por categoria
+                <i class="bi bi-check-circle" aria-hidden="true"></i> Ver disponíveis por categoria
             </a>
         </div>
     </div>
     <div class="home-hero-panel">
         <div class="hero-stat">
-            <span>Disponiveis</span>
+            <span>Disponíveis</span>
             <strong>${veiculosDisponiveis}</strong>
         </div>
         <div class="hero-stat">
-            <span>Locacoes ativas</span>
+            <span>Locações ativas</span>
             <strong>${locacoesAtivas}</strong>
         </div>
     </div>
@@ -29,19 +29,19 @@
 
 <div class="dashboard-grid compact-dashboard">
     <div class="card dashboard-stat">
-        <div class="label">Veiculos</div>
+        <div class="label">Veículos</div>
         <div class="value">${totalVeiculos}</div>
     </div>
     <div class="card dashboard-stat">
-        <div class="label">Disponiveis</div>
+        <div class="label">Disponíveis</div>
         <div class="value">${veiculosDisponiveis}</div>
     </div>
     <div class="card dashboard-stat">
-        <div class="label">Locatarios</div>
+        <div class="label">Locatários</div>
         <div class="value">${totalLocatarios}</div>
     </div>
     <div class="card dashboard-stat">
-        <div class="label">Locacoes Ativas</div>
+        <div class="label">Locações ativas</div>
         <div class="value">${locacoesAtivas}</div>
     </div>
 </div>
@@ -53,19 +53,19 @@
             <div class="shortcut-grid two-columns">
                 <a class="shortcut-link shortcut-featured" href="${pageContext.request.contextPath}/locacoes/nova">
                     <i class="bi bi-key" aria-hidden="true"></i>
-                    <span><strong>Nova locacao</strong>Vitrine de carros disponiveis, busca por CPF e confirmacao da retirada.</span>
+                    <span><strong>Nova locação</strong>Vitrine de carros disponíveis, busca por CPF e confirmação da retirada.</span>
                 </a>
                 <a class="shortcut-link" href="${pageContext.request.contextPath}/devolucoes">
                     <i class="bi bi-arrow-return-left" aria-hidden="true"></i>
-                    <span><strong>Devolucoes</strong>Calculo de valores e encerramento das locacoes ativas.</span>
+                    <span><strong>Devoluções</strong>Cálculo de valores e encerramento das locações ativas.</span>
                 </a>
                 <a class="shortcut-link" href="${pageContext.request.contextPath}/reparos">
                     <i class="bi bi-tools" aria-hidden="true"></i>
-                    <span><strong>Reparos</strong>Registro de oficina e controle de veiculos indisponiveis.</span>
+                    <span><strong>Reparos</strong>Registro de oficina e controle de veículos indisponíveis.</span>
                 </a>
                 <a class="shortcut-link" href="${pageContext.request.contextPath}/relatorios">
                     <i class="bi bi-bar-chart" aria-hidden="true"></i>
-                    <span><strong>Relatorios</strong>PDFs operacionais para locacoes, clientes e reparos.</span>
+                    <span><strong>Relatórios</strong>PDFs operacionais para locações, clientes e reparos.</span>
                 </a>
             </div>
         </div>
