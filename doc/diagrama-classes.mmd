@@ -1,0 +1,69 @@
+classDiagram
+    class Categoria {
+        +Long id
+        +String nome
+        +String descricao
+        +BigDecimal valorDiaria
+    }
+
+    class Veiculo {
+        +String placa
+        +String marca
+        +String modelo
+        +String cor
+        +Integer ano
+        +TipoCombustivel tipoCombustivel
+        +Integer quilometragem
+        +TipoCambio tipoCambio
+        +BigDecimal capacidadeTanque
+        +StatusVeiculo status
+    }
+
+    class Endereco {
+        +Long id
+        +String logradouro
+        +String numero
+        +String cep
+        +String cidade
+    }
+
+    class Locatario {
+        +String cpf
+        +String nome
+        +String numeroHabilitacao
+        +LocalDate dataNascimento
+    }
+
+    class Locacao {
+        +Long id
+        +LocalDate dataRetirada
+        +Integer quantidadeDias
+        +StatusLocacao status
+        +calcularDataPrevistaDevolucao()
+    }
+
+    class Devolucao {
+        +Long id
+        +LocalDate dataDevolucao
+        +BigDecimal litrosFaltantes
+        +BigDecimal valorCombustivel
+        +BigDecimal valorLocacao
+        +BigDecimal valorTotal
+    }
+
+    class Reparo {
+        +Long id
+        +LocalDate dataEntrada
+        +Integer quantidadeDias
+        +String descricaoProblema
+        +BigDecimal valorReparo
+        +StatusReparo status
+        +calcularDataPrevistaSaida()
+    }
+
+    Categoria "1" --> "0..*" Veiculo
+    Endereco "1" --> "0..*" Locatario
+    Locatario "1" --> "0..*" Locacao
+    Veiculo "1" --> "0..*" Locacao
+    Locacao "1" --> "0..1" Devolucao
+    Veiculo "1" --> "0..*" Reparo

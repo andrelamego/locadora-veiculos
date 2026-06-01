@@ -1,0 +1,73 @@
+erDiagram
+    CATEGORIA ||--o{ VEICULO : possui
+    ENDERECO ||--o{ LOCATARIO : pertence
+    LOCATARIO ||--o{ LOCACAO : realiza
+    VEICULO ||--o{ LOCACAO : alugado_em
+    LOCACAO ||--o| DEVOLUCAO : gera
+    VEICULO ||--o{ REPARO : passa_por
+
+    CATEGORIA {
+        BIGINT id PK
+        VARCHAR nome
+        VARCHAR descricao
+        DECIMAL valor_diaria
+    }
+
+    VEICULO {
+        VARCHAR placa PK
+        VARCHAR marca
+        VARCHAR modelo
+        VARCHAR cor
+        INT ano
+        VARCHAR tipo_combustivel
+        INT quilometragem
+        VARCHAR tipo_cambio
+        DECIMAL capacidade_tanque
+        VARCHAR status
+        BIGINT categoria_id FK
+    }
+
+    ENDERECO {
+        BIGINT id PK
+        VARCHAR logradouro
+        VARCHAR numero
+        VARCHAR cep
+        VARCHAR cidade
+    }
+
+    LOCATARIO {
+        VARCHAR cpf PK
+        VARCHAR nome
+        VARCHAR numero_habilitacao
+        DATE data_nascimento
+        BIGINT endereco_id FK
+    }
+
+    LOCACAO {
+        BIGINT id PK
+        VARCHAR veiculo_placa FK
+        VARCHAR locatario_cpf FK
+        DATE data_retirada
+        INT quantidade_dias
+        VARCHAR status
+    }
+
+    DEVOLUCAO {
+        BIGINT id PK
+        BIGINT locacao_id FK
+        DATE data_devolucao
+        DECIMAL litros_faltantes
+        DECIMAL valor_combustivel
+        DECIMAL valor_locacao
+        DECIMAL valor_total
+    }
+
+    REPARO {
+        BIGINT id PK
+        VARCHAR veiculo_placa FK
+        DATE data_entrada
+        INT quantidade_dias
+        VARCHAR descricao_problema
+        DECIMAL valor_reparo
+        VARCHAR status
+    }
