@@ -2143,7 +2143,7 @@ Organização sugerida:
 
 ```text
 src/main/resources/db
-├── 01_schema_sqlserver.sql
+├── 01_tabelas_sqlserver.sql
 ├── 02_views_sqlserver.sql
 ├── 03_functions_sqlserver.sql
 ├── 04_procedures_sqlserver.sql
